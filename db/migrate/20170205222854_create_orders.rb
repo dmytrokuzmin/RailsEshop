@@ -11,7 +11,6 @@ class CreateOrders < ActiveRecord::Migration[5.0]
       t.integer :billing_address_id
       t.integer :customer_id
 
-
       t.timestamps
     end
   end

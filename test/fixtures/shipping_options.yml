@@ -2,12 +2,14 @@
 
 one:
   name: MyString
-  description: MyText
+  description: MyString
   price: 9.99
-  requires_address: false
+  is_local_pickup: false
+  is_deleted: false
 
 two:
   name: MyString
-  description: MyText
+  description: MyString
   price: 9.99
-  requires_address: false
+  is_local_pickup: false
+  is_deleted: false

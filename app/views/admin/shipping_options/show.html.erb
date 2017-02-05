@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shipping_option.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @shipping_option.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @shipping_option.price %>
+</p>
+
+<p>
+  <strong>Is local pickup:</strong>
+  <%= @shipping_option.is_local_pickup %>
+</p>
+
+<p>
+  <strong>Is deleted:</strong>
+  <%= @shipping_option.is_deleted %>
+</p>
+
+<%= link_to 'Edit', edit_shipping_option_path(@shipping_option) %> |
+<%= link_to 'Back', shipping_options_path %>

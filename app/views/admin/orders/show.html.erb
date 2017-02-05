@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Total items price:</strong>
+  <%= @order.total_items_price %>
+</p>
+
+<p>
+  <strong>Shipping price:</strong>
+  <%= @order.shipping_price %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @order.created_at %>
+</p>
+
+<p>
+  <strong>Closed at:</strong>
+  <%= @order.closed_at %>
+</p>
+
+<p>
+  <strong>Shipping option:</strong>
+  <%= @order.shipping_option_id %>
+</p>
+
+<p>
+  <strong>Shipping address:</strong>
+  <%= @order.shipping_address_id %>
+</p>
+
+<p>
+  <strong>Billing address:</strong>
+  <%= @order.billing_address_id %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @order.customer_id %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
