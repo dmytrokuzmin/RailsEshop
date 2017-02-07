@@ -29,7 +29,7 @@ class Admin::ShippingOptionsController < ApplicationController
 
     respond_to do |format|
       if @shipping_option.save
-        format.html { redirect_to @shipping_option, notice: 'Shipping option was successfully created.' }
+        format.html { redirect_to [:admin, @shipping_option], notice: 'Shipping option was successfully created.' }
         format.json { render :show, status: :created, location: @shipping_option }
       else
         format.html { render :new }
@@ -43,8 +43,8 @@ class Admin::ShippingOptionsController < ApplicationController
   def update
     respond_to do |format|
       if @shipping_option.update(shipping_option_params)
-        format.html { redirect_to @shipping_option, notice: 'Shipping option was successfully updated.' }
-        format.json { render :show, status: :ok, location: @shipping_option }
+        format.html { redirect_to [:admin, @shipping_option], notice: 'Shipping option was successfully updated.' }
+        format.json { render :show, status: :ok, location: [:admin, @shipping_option] }
       else
         format.html { render :edit }
         format.json { render json: @shipping_option.errors, status: :unprocessable_entity }
@@ -57,7 +57,7 @@ class Admin::ShippingOptionsController < ApplicationController
   def destroy
     @shipping_option.destroy
     respond_to do |format|
-      format.html { redirect_to shipping_options_url, notice: 'Shipping option was successfully destroyed.' }
+      format.html { redirect_to admin_shipping_options_url, notice: 'Shipping option was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -29,8 +29,8 @@ class Admin::OrdersController< ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
+        format.html { redirect_to [:admin, @order], notice: 'Order was successfully created.' }
+        format.json { render :show, status: :created, location: [:admin, @order] }
       else
         format.html { render :new }
         format.json { render json: @order.errors, status: :unprocessable_entity }
@@ -43,8 +43,8 @@ class Admin::OrdersController< ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
-        format.json { render :show, status: :ok, location: @order }
+        format.html { redirect_to [:admin, @order], notice: 'Order was successfully updated.' }
+        format.json { render :show, status: :ok, location: [:admin, @order] }
       else
         format.html { render :edit }
         format.json { render json: @order.errors, status: :unprocessable_entity }
@@ -57,7 +57,7 @@ class Admin::OrdersController< ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to admin_orders_url, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

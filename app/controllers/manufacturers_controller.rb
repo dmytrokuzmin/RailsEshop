@@ -29,8 +29,8 @@ class Admin::ManufacturersController < ApplicationController
 
     respond_to do |format|
       if @manufacturer.save
-        format.html { redirect_to @manufacturer, notice: 'Manufacturer was successfully created.' }
-        format.json { render :show, status: :created, location: @manufacturer }
+        format.html { redirect_to [:admin, @manufacturer], notice: 'Manufacturer was successfully created.' }
+        format.json { render :show, status: :created, location: [:admin, @manufacturer] }
       else
         format.html { render :new }
         format.json { render json: @manufacturer.errors, status: :unprocessable_entity }
@@ -43,8 +43,8 @@ class Admin::ManufacturersController < ApplicationController
   def update
     respond_to do |format|
       if @manufacturer.update(manufacturer_params)
-        format.html { redirect_to @manufacturer, notice: 'Manufacturer was successfully updated.' }
-        format.json { render :show, status: :ok, location: @manufacturer }
+        format.html { redirect_to [:admin, @manufacturer], notice: 'Manufacturer was successfully updated.' }
+        format.json { render :show, status: :ok, location: [:admin, @manufacturer] }
       else
         format.html { render :edit }
         format.json { render json: @manufacturer.errors, status: :unprocessable_entity }
@@ -57,7 +57,7 @@ class Admin::ManufacturersController < ApplicationController
   def destroy
     @manufacturer.destroy
     respond_to do |format|
-      format.html { redirect_to manufacturers_url, notice: 'Manufacturer was successfully destroyed.' }
+      format.html { redirect_to admin_manufacturers_url, notice: 'Manufacturer was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
