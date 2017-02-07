@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsEshop - dashboard</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag    'admin/dashboard', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "example1",   '#' %></li>
+        <li><%= link_to "example2", '#' %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+</header>
+<div id="wrapper">
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <%= link_to 'Dashboard', admin_orders_path %>
+      </li>
+      <li>
+        <%= link_to 'Orders', admin_orders_path %>
+      </li>
+      <li>
+        <%= link_to 'Products', admin_products_path %>
+      </li>
+      <li>
+        <%= link_to 'Categories', admin_categories_path %>
+      </li>
+      <li>
+        <%= link_to 'Manufacturers', admin_manufacturers_path %>
+      </li>
+      <li>
+        <%= link_to 'Shipping options', admin_shipping_options_path %>
+      </li>
+    </ul>
+  </div>
+  <div id="page-content-wrapper">
+    <%= yield %>
+  </div>
+</div>
+</body>
+</html>

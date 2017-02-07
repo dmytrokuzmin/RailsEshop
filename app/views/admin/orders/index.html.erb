@@ -30,9 +30,9 @@
         <td><%= order.shipping_address_id %></td>
         <td><%= order.billing_address_id %></td>
         <td><%= order.customer_id %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [:admin, order] %></td>
+        <td><%= link_to 'Edit', edit_admin_order_path(order) %></td>
+        <td><%= link_to 'Destroy', [:admin, order], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -40,4 +40,4 @@
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%= link_to 'New Order', new_admin_order_path %>

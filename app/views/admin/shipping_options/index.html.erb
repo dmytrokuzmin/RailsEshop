@@ -22,9 +22,9 @@
         <td><%= shipping_option.price %></td>
         <td><%= shipping_option.is_local_pickup %></td>
         <td><%= shipping_option.is_deleted %></td>
-        <td><%= link_to 'Show', shipping_option %></td>
-        <td><%= link_to 'Edit', edit_shipping_option_path(shipping_option) %></td>
-        <td><%= link_to 'Destroy', shipping_option, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [:admin, shipping_option] %></td>
+        <td><%= link_to 'Edit', edit_admin_shipping_option_path(shipping_option) %></td>
+        <td><%= link_to 'Destroy', [:admin, shipping_option], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Shipping Option', new_shipping_option_path %>
+<%= link_to 'New Shipping Option', new_admin_shipping_option_path %>

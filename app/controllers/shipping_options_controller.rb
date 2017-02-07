@@ -1,5 +1,6 @@
 class Admin::ShippingOptionsController < ApplicationController
   before_action :set_shipping_option, only: [:show, :edit, :update, :destroy]
+  layout 'dashboard'
 
   # GET /shipping_options
   # GET /shipping_options.json
