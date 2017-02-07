@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :image %>
-    <%= f.file_field :image, class: 'form-control'%>
+    <%= f.file_field :image%>
   </div>
   <div class="field">
     <%= f.label :name %>
@@ -29,7 +29,14 @@
     <%= f.label :price %>
     <%= f.text_field :price %>
   </div>
-
+  <div class="field">
+    <%= f.label :category %>
+    <%= f.select :category_id, options_for_select(Category.all.map{|s|[s.name, s.id]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :manufacturer %>
+    <%= f.select :manufacturer_id, options_for_select(Manufacturer.all.map{|s|[s.name, s.id]}) %>
+  </div>
   <div class="field">
     <%= f.label :sku_number %>
     <%= f.text_field :sku_number %>
