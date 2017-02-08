@@ -1,6 +1,7 @@
 class Admin::ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   layout 'dashboard'
+  before_action :authenticate_admin!
 
   # GET /products
   # GET /products.json

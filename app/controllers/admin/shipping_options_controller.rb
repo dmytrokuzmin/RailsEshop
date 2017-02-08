@@ -1,6 +1,7 @@
 class Admin::ShippingOptionsController < ApplicationController
   before_action :set_shipping_option, only: [:show, :edit, :update, :destroy]
   layout 'dashboard'
+  before_action :authenticate_admin!
 
   # GET /shipping_options
   # GET /shipping_options.json

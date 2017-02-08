@@ -20,21 +20,18 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Rails Eshop</a>
+      <a class="navbar-brand" href="<%= admin_root_path %>">Rails Eshop - Dashboard</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav pull-right">
-        <li>
-          <a href="#">Cart</a>
-        </li>
         <% if admin_signed_in? %>
             <li>
-              <%= link_to('Logout', destroy_admin_admin_session_path, :method => :delete) %>
+              <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
             </li>
         <% else %>
             <li>
-              <%= link_to('Login', new_admin_admin_session_path)  %>
+              <%= link_to('Login', new_admin_session_path)  %>
             </li>
         <% end %>
       </ul>
@@ -60,7 +57,10 @@
       <li>
         <%= link_to 'Shipping options', admin_shipping_options_path %>
       </li>
+      <li><a href="<%= root_path %>">Live site<span class="glyphicon glyphicon-share-alt"></span></a></li>
     </ul>
+
+
   </div>
   <div id="page-content-wrapper">
     <%= yield %>

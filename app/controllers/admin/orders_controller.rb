@@ -1,6 +1,7 @@
 class Admin::OrdersController< ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   layout 'dashboard'
+  before_action :authenticate_admin!
 
   # GET /orders
   # GET /orders.json
