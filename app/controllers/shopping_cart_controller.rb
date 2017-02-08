@@ -1,6 +1,7 @@
 class ShoppingCartController < ApplicationController
   before_action :set_cart, only: [:index, :add_cart_item, :checkout_customer]
   before_action :authenticate_customer!, :except => [:index, :add_cart_item]
+  layout 'eshop'
 
   #GET
   def index

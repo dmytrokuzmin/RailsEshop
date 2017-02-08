@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show]
   before_action :set_cart
+  layout 'eshop'
 
   def index
     if params[:category] == nil
