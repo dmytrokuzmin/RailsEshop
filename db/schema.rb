@@ -127,10 +127,10 @@ ActiveRecord::Schema.define(version: 20170207192026) do
 
   create_table "shopping_cart_items", force: :cascade do |t|
     t.integer  "quantity"
-    t.integer  "cart_id"
+    t.integer  "shopping_cart_id"
     t.integer  "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "shopping_carts", force: :cascade do |t|

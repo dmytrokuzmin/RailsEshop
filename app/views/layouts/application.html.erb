@@ -26,7 +26,8 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav pull-right">
           <li>
-            <a href="#">Cart</a>
+
+            <%= link_to('Cart', shopping_cart_index_path) %>
           </li>
           <% if customer_signed_in? %>
               <li>

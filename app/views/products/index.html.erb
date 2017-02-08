@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
+<h1><%= @heading %></h1>
 
 <div class="row">
     <% @products.each do |product| %>
@@ -11,7 +11,7 @@
           <div class="caption">
             <h4 class="pull-left">CZK: <%= product.price %></h4>
             <p class="pull-right">
-              <a href="#" class="btn btn-success">Add to cart</a>
+              <%= link_to "Add to cart", add_cart_item_path(:product_id => product), :method => :post, :class => "btn btn-success" %>
             </p>
           </div>
         </div>

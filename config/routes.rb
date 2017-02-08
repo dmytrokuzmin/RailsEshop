@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :products, only: [:show, :index]
+  resources :shopping_cart, only: [:index, :add_product_to_cart]
+  post '/add_cart_item/:product_id' => 'shopping_cart#add_cart_item', :as => 'add_cart_item'
   devise_for :customers
   root 'products#index'
 
