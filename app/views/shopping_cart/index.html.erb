@@ -25,7 +25,13 @@
           <% end %>
         </tbody>
       </table>
+      <div class="row">
+        <p class="pull-right">Total price: CZK <%= @cart.calculate_total  %></p>
+      </div>
+      <div class="row">
+        <a href="<%= checkout_customer_url %>" class="btn btn-success pull-right">Proceed to checkout</a >
+      </div>
   <% end %>
 </div>
-<p class="pull-right">Total price: CZK <%= @cart.calculate_total  %></p>
+
 

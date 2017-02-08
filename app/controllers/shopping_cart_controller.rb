@@ -1,12 +1,20 @@
 class ShoppingCartController < ApplicationController
-  before_action :set_cart, only: [:index, :add_cart_item]
+  before_action :set_cart, only: [:index, :add_cart_item, :checkout_customer]
+  before_action :authenticate_customer!, :except => [:index, :add_cart_item]
 
+  #GET
   def index
   end
 
+  #POST
   def add_cart_item
     @cart.add_item(params[:product_id])
     redirect_to :back, notice: 'Item was successfully added to cart.'
+  end
+
+  #GET
+  def checkout_customer
+    @customer = current_customer
   end
 
   private

@@ -27,7 +27,7 @@
         <ul class="nav navbar-nav pull-right">
           <li>
 
-            <%= link_to('Cart', shopping_cart_index_path) %>
+            <a href="<%= shopping_cart_index_url %>"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a>
           </li>
           <% if customer_signed_in? %>
               <li>
@@ -35,7 +35,7 @@
               </li>
           <% else %>
               <li>
-                <%= link_to('Login', new_customer_session_path)  %>
+                <%= link_to('Customer Login', new_customer_session_path)  %>
               </li>
           <% end %>
         </ul>
