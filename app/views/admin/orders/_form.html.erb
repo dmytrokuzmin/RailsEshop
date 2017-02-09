@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :status %>
-    <%= f.number_field :status %>
+    <%= f.select :status, options_for_select(Order.statuses.map {|k, v| [k, k]}) %>
   </div>
 
   <div class="field">
@@ -34,26 +34,6 @@
   <div class="field">
     <%= f.label :closed_at %>
     <%= f.datetime_select :closed_at %>
-  </div>
-
-  <div class="field">
-    <%= f.label :shipping_option_id %>
-    <%= f.number_field :shipping_option_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :shipping_address_id %>
-    <%= f.number_field :shipping_address_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :billing_address_id %>
-    <%= f.number_field :billing_address_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :customer_id %>
-    <%= f.number_field :customer_id %>
   </div>
 
   <div class="actions">

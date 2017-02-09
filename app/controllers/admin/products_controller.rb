@@ -56,7 +56,7 @@ class Admin::ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
-    @product.destroy
+    @product.is_deleted = true
     respond_to do |format|
       format.html { redirect_to admin_products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }

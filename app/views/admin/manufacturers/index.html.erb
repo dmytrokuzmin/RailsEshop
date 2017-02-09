@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Manufacturers</h1>
-
-<table>
+<%= link_to 'New Manufacturer', new_admin_manufacturer_path, class:"btn btn-warning"%>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -24,6 +24,5 @@
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Manufacturer', new_admin_manufacturer_path %>
+
