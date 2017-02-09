@@ -1,2 +1,0 @@
-class ShippingOption < ApplicationRecord
-end

@@ -1,6 +1,0 @@
-<h1>Choose shipping method</h1>
-
-<% @shippings.each do |s| %>
-    <%= radio_button_tag(s.id, s.id) %>
-    <%= label_tag(s.id, "#{s.description} (#{s.price})") %>
-<% end %>

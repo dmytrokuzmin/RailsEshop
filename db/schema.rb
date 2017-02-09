@@ -119,16 +119,6 @@ ActiveRecord::Schema.define(version: 20170208234254) do
     t.datetime "image_updated_at"
   end
 
-  create_table "shipping_options", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
-    t.decimal  "price"
-    t.boolean  "is_local_pickup"
-    t.boolean  "is_deleted"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
   create_table "shopping_cart_items", force: :cascade do |t|
     t.integer  "quantity"
     t.integer  "shopping_cart_id"

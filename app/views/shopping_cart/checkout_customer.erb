@@ -1,13 +1,15 @@
-<h1>Customer and shipping</h1>
+<h1>Customer and shipping address</h1>
 
+<div class="row">
+<div class="col-md-6">
 <%= form_for(@customer, url: update_customer_path(@customer), html: {method: 'patch'}) do |f| %>
 <div class="field">
-  <%= f.label :first_name %>
+  <%= f.label :first_name %><br />
   <%= f.text_field :first_name %>
 </div>
 
 <div class="field">
-  <%= f.label :last_name %>
+  <%= f.label :last_name %><br />
   <%= f.text_field :last_name %>
 </div>
 <%= f.fields_for :address, @customer.address do |s| %>
@@ -37,6 +39,8 @@
     </div>
 <% end %>
 <div class="actions">
-  <%= f.submit "Proceed to next step", class: "btn btn-success" %>
+  <%= f.submit "Proceed to summary", class: "btn btn-success" %>
 </div>
 <% end %>
+</div>
+</div>

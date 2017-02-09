@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shopping cart summary</h1>
+<div class="row">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Image</th>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price per item</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%  @cart.shopping_cart_items.each do |item| %>
+            <tr>
+              <td><%= link_to (image_tag item.product.image, class: "cart-image" ), item.product%></td>
+              <td><%= link_to item.product.name, item.product %></td>
+              <td><%= item.quantity  %></td>
+              <td><%= item.product.price  %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <div class ="row">
+        <h2>Deliver to:</h2>
+        <%= @customer.last_name %><br/>
+        <%= @customer.first_name %><br/>
+        <%= @customer.address.country %><br/>
+        <%= @customer.address.city %><br />
+        <%= @customer.address.address_line1 %><br />
+        <%= @customer.address.address_line2 %><br />
+        <%= @customer.address.zip_postal_code %><br />
+      </div>
+      <div class="row">
+        <p class="pull-right">Total order price: CZK <%= @cart.calculate_total  %></p>
+      </div>
+      <div class="row">
+        <%= form_for(@cart, url: create_order_path(@cart.id), html: {method: 'post'}) do |f| %>
+          <%= f.submit "Everything is correct, create order", class: "btn btn-success" %>
+        <% end %>
+      </div>
+</div>
