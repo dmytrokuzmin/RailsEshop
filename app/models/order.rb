@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
   enum status: [:pending, :processing, :complete, :cancelled]
-
+  validates :total_items_price, numericality: true
   has_many :order_items
   has_many :products, :through => :order_items
   belongs_to :customer

@@ -14,11 +14,6 @@ class Admin::OrdersController< ApplicationController
   def show
   end
 
-  # GET /orders/new
-  def new
-    @order = Order.new
-  end
-
   # GET /orders/1/edit
   def edit
   end
@@ -56,7 +51,7 @@ class Admin::OrdersController< ApplicationController
   # DELETE /orders/1
   # DELETE /orders/1.json
   def destroy
-    @order.is_deleted = true
+    @order.destroy
     respond_to do |format|
       format.html { redirect_to admin_orders_url, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }

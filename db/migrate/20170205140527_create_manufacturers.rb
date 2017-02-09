@@ -3,7 +3,7 @@ class CreateManufacturers < ActiveRecord::Migration[5.0]
     create_table :manufacturers do |t|
       t.string :name
       t.text :description
-      t.boolean :is_deleted
+      t.boolean :is_deleted, :default => false
 
       t.timestamps
     end

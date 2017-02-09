@@ -5,7 +5,7 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.text :description
       t.decimal :price
       t.string :sku_number
-      t.boolean :is_deleted
+      t.boolean :is_deleted, :default => false
       t.integer :stock_quantity
       t.integer :category_id
       t.integer :manufacturer_id

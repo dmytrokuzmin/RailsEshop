@@ -47,9 +47,9 @@ ActiveRecord::Schema.define(version: 20170208234254) do
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.boolean  "is_deleted"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "is_deleted",  default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "customers", force: :cascade do |t|
@@ -75,9 +75,9 @@ ActiveRecord::Schema.define(version: 20170208234254) do
   create_table "manufacturers", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.boolean  "is_deleted"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "is_deleted",  default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -107,12 +107,12 @@ ActiveRecord::Schema.define(version: 20170208234254) do
     t.text     "description"
     t.decimal  "price"
     t.string   "sku_number"
-    t.boolean  "is_deleted"
+    t.boolean  "is_deleted",         default: false
     t.integer  "stock_quantity"
     t.integer  "category_id"
     t.integer  "manufacturer_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
