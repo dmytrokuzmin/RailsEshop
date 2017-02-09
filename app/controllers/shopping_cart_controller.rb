@@ -1,6 +1,5 @@
 class ShoppingCartController < ApplicationController
   before_action :set_cart, only: [:index, :add_cart_item, :checkout_customer]
-  before_action :set_customer, only: [:checkout_customer, :update_customer]
   before_action :authenticate_customer!, :except => [:index, :add_cart_item]
   layout 'eshop'
 
@@ -16,10 +15,12 @@ class ShoppingCartController < ApplicationController
 
   #GET
   def checkout_customer
+    set_customer
   end
 
   #PATCH
   def update_customer
+    set_customer
     respond_to do |format|
       if @customer.update_attributes(customer_params)
         format.html { redirect_to :checkout_shipping, notice: 'You data have been updated.' }
