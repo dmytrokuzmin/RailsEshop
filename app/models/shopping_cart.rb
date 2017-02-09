@@ -7,15 +7,13 @@ class ShoppingCart < ApplicationRecord
     item = shopping_cart_items.where('product_id = ?', product_id).first
     if item != nil
       q = item.read_attribute(:quantity)
-      item.update_attribute(:quantity, q + 1)
+      if(item.product.stock_quantity > q)
+        item.update_attribute(:quantity, q + 1)
+      end
       save
     else
       shopping_cart_items.create(:product_id => product_id, :quantity => 1)
     end
-  end
-
-  def select_shipping_option(shipping_option_id)
-    shipping_option_id = shipping_option_id
   end
 
   def calculate_total

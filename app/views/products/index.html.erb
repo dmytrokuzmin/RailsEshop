@@ -11,7 +11,11 @@
           <div class="caption">
             <h4 class="pull-left">CZK: <%= product.price %></h4>
             <p class="pull-right">
+              <% if product.stock_quantity > 0 %>
               <%= link_to "Add to cart", add_cart_item_path(:product_id => product), :method => :post, :class => "btn btn-success" %>
+              <% else %>
+                  <span class="text-danger"> Out of stock</span></p>
+              <% end %>
             </p>
           </div>
         </div>

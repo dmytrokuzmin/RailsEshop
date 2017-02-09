@@ -55,6 +55,9 @@ class ShoppingCartController < ApplicationController
           @order.order_items.create(:product_id => item.product_id,
                                     :quantity => item.quantity,
                                     :price_per_item => item.product.price)
+
+          q = item.product.read_attribute(:stock_quantity)
+          item.product.update_attribute(:stock_quantity, q - item.quantity)
         end
 
         @cart.destroy!

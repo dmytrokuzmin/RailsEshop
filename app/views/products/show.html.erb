@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Back', products_path %>
+<div class="row">
+<div class="col col-md-4">
+  <%= image_tag @product.image%>
+</div>
+<div class="col col-md-8">
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
@@ -9,20 +15,23 @@
   <strong>Description:</strong>
   <%= @product.description %>
 </p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
 <p>
   <strong>Sku number:</strong>
   <%= @product.sku_number %>
 </p>
-
 <p>
-  <strong>Is deleted:</strong>
-  <%= @product.is_deleted %>
+  <strong>Price:</strong>
+  <%= @product.price %> CZK
 </p>
+<p>
+  <strong>Stock status:</strong>
+  <% if @product.stock_quantity > 0 %>
+    <span class="text-success"> In stock (<%= @product.stock_quantity %>)</span></p>
+    <%= link_to "Add to cart", add_cart_item_path(:product_id => @product), :method => :post, :class => "btn btn-success" %>
+  <% else %>
+    <span class="text-danger"> Out of stock</span></p>
+  <% end %>
+ </div>
+</div>
 
-<%= link_to 'Back', products_path %>
+
