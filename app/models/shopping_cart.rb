@@ -3,8 +3,6 @@ class ShoppingCart < ApplicationRecord
   has_many :products, :through => :shopping_cart_items
   accepts_nested_attributes_for :shopping_cart_items
 
-
-
   def add_item(product_id)
     item = shopping_cart_items.where('product_id = ?', product_id).first
     if item != nil
@@ -24,5 +22,4 @@ class ShoppingCart < ApplicationRecord
     end
     sum
   end
-
 end

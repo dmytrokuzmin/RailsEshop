@@ -5,4 +5,6 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :orders
+  has_one :address, autosave: true
+  accepts_nested_attributes_for :address
 end
